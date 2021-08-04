@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.navbarCont {
+    position: fixed;
+    top: 0;
+    left: 25%;
+    height: 5vh;
+    width: 50%;
+    z-index: 3;
+
+    & > .navbarInner {
+        display: flex;
+        justify-content: space-between;
+        background-color: $light-orange;
+
+        & > .navItem {
+            font-size: 2rem;
+            color: $light-green;
+            width: fit-content;
+        }
+    }
+}

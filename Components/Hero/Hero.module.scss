@@ -1,0 +1,15 @@
+.heroInner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-position-x: 35%;
+    background-position-y: 65%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media(min-width: 600px){
+    .heroInner {
+        background-position-x: center;
+    }
+}
