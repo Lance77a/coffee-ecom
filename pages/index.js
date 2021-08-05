@@ -7,7 +7,7 @@ import ProductCard from '../Components/ProductCard/ProductCard'
 // import { createCheckoutSession } from 'next-stripe/client';
 // import styles from '../styles/index.module.scss'
 // import getStripe from "../lib/stripe/getStripe";
-import getProducts from '../lib/stripe/GetProducts'
+// import getProducts from '../lib/stripe/GetProducts'
 import { useShoppingCart } from 'use-shopping-cart'
 import Stripe from 'stripe'
 
