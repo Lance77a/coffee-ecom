@@ -7,7 +7,14 @@ import getStripe from "../lib/stripe/getStripe";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <CartProvider mode="checkout-session" stripe={getStripe()} currency={"usd"}>
+      <CartProvider mode="payment"
+      cartMode='client-only'
+      stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+      currency={"USD"}
+      successUrl="https://stripe.com"
+      cancelUrl="https://twitter.com/dayhaysoos"
+      allowedCountries={['US', 'GB', 'CA']}
+      billingAddressCollection={true}>
         <Component {...pageProps} />
       </CartProvider>
     </Layout>
