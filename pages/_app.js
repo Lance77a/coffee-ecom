@@ -1,10 +1,15 @@
 import '../styles/globals.scss'
 import Layout from '../Components/Layout/Layout'
+import { CartProvider } from 'use-shopping-cart'
+import getStripe from "../lib/stripe/getStripe";
+
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Component {...pageProps} />
+      <CartProvider mode="checkout-session" stripe={getStripe()} currency={"usd"}>
+        <Component {...pageProps} />
+      </CartProvider>
     </Layout>
   )
 }
