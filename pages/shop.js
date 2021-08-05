@@ -1,18 +1,8 @@
 import { useShoppingCart } from 'use-shopping-cart'
 import ProductCard from '../Components/ProductCard/ProductCard'
+import Stripe from 'stripe'
 
-const productData = [
-  {
-    name: 'Bananas',
-    description: 'Yummy yellow fruit',
-    id: 'id_banana001',
-    price: 400,
-    currency: 'USD',
-    image: 'https://my-image.com/banana.jpg'
-  },
-]
-
-export default function Shop() {
+export default function Shop({products}) {
   /* Gets the totalPrice and a method for redirecting to stripe */
   const { totalPrice, redirectToCheckout, cartCount } = useShoppingCart()
 
@@ -26,6 +16,25 @@ export default function Shop() {
 
       {/* Redirects the user to Stripe */}
       <button onClick={() => redirectToCheckout()}>Checkout</button>
+
+      <ul>
+       {products.map(item => ( <ProductCard key={item.id} {...item} /> ))}
+      </ul>
     </div>
   )
 }
+
+export const getServerSideProps = async () => {
+
+  const stripe = await new Stripe(process.env.STRIPE_SECRET_KEY, {
+      apiVersion: "2020-08-27",
+  });
+
+  const prices = await stripe.prices.list({
+      active: true,
+      limit: 10,
+      expand: ["data.product"],
+  });
+
+  return { props: { products: prices.data } };
+};
