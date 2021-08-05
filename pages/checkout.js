@@ -5,7 +5,7 @@ export default function Checkout() {
     return(
         <div>
             hello, welcome to checkout page!
-            <button onclick={() => redirectToCheckout()}>
+            <button onClick={() => redirectToCheckout()}>
                 redirect to checkout
             </button>
         </div>
