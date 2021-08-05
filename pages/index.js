@@ -4,9 +4,9 @@ import LargeCont from '../Components/containers/LargeCont'
 import BannerCont from '../Components/containers/BannerCont'
 import ImageAside from '../Components/ImageAside/ImageAside'
 import ProductCard from '../Components/ProductCard/ProductCard'
-import { createCheckoutSession } from 'next-stripe/client';
-import styles from '../styles/index.module.scss'
-import getStripe from "../lib/stripe/getStripe";
+// import { createCheckoutSession } from 'next-stripe/client';
+// import styles from '../styles/index.module.scss'
+// import getStripe from "../lib/stripe/getStripe";
 import getProducts from '../lib/stripe/GetProducts'
 import { useShoppingCart } from 'use-shopping-cart'
 
