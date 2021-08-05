@@ -9,6 +9,7 @@ import ProductCard from '../Components/ProductCard/ProductCard'
 // import getStripe from "../lib/stripe/getStripe";
 import getProducts from '../lib/stripe/GetProducts'
 import { useShoppingCart } from 'use-shopping-cart'
+import Stripe from 'stripe'
 
 export default function Home({products}) {
   const { totalPrice, redirectToCheckout, cartCount, clearCart, cartData } = useShoppingCart()
@@ -58,5 +59,17 @@ export default function Home({products}) {
 }
 
 export const getServerSideProps = async () => {
-  return getProducts();
-};
+
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+        apiVersion: "2020-08-27",
+    });
+
+    const prices = await stripe.prices.list({
+        active: true,
+        limit: 10,
+        expand: ["data.product"],
+    });
+
+    return { props: { products: prices.data } };
+  };
+
