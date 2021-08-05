@@ -4,32 +4,12 @@ import LargeCont from '../Components/containers/LargeCont'
 import BannerCont from '../Components/containers/BannerCont'
 import ImageAside from '../Components/ImageAside/ImageAside'
 import ProductCard from '../Components/ProductCard/ProductCard'
-// import { createCheckoutSession } from 'next-stripe/client';
 // import styles from '../styles/index.module.scss'
-// import getStripe from "../lib/stripe/getStripe";
-// import getProducts from '../lib/stripe/GetProducts'
 import { useShoppingCart } from 'use-shopping-cart'
 import Stripe from 'stripe'
 
 export default function Home({products}) {
   const { totalPrice, redirectToCheckout, cartCount, clearCart, cartData } = useShoppingCart()
-  
-  // const onClick = async (priceId) => {
-  //   const session = await createCheckoutSession({
-  //     success_url: window.location.href,
-  //     cancel_url: window.location.href,
-  //     line_items: [{ price: priceId, quantity: 1 }],
-  //     payment_method_types: ["card"],
-  //     mode: "payment",
-  //   });
-  //   const stripe = await getStripe();
-  //   try {
-  //     stripe.redirectToCheckout({ sessionId: session.id });
-  //   }
-  //   catch {
-  //     console.log(e)
-  //   }
-  // };
 
   return (
     <div>
@@ -60,7 +40,7 @@ export default function Home({products}) {
 
 export const getServerSideProps = async () => {
 
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    const stripe = await new Stripe(process.env.STRIPE_SECRET_KEY, {
         apiVersion: "2020-08-27",
     });
 
@@ -72,4 +52,3 @@ export const getServerSideProps = async () => {
 
     return { props: { products: prices.data } };
   };
-
