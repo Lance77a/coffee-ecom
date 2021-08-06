@@ -1,6 +1,7 @@
 import '../styles/globals.scss'
 import Layout from '../Components/Layout/Layout'
 import { CartProvider } from 'use-shopping-cart'
+import '@stripe/stripe-js';
 
 
 function MyApp({ Component, pageProps }) {

@@ -8,8 +8,9 @@ import ProductCard from '../Components/ProductCard/ProductCard'
 import { useShoppingCart } from 'use-shopping-cart'
 import Stripe from 'stripe'
 
-export default function Home({products}) {
+export default function Home({prices}) {
   const { totalPrice, redirectToCheckout, cartCount, clearCart, } = useShoppingCart()
+  {console.log(prices)}
 
   return (
     <div>
@@ -25,9 +26,9 @@ export default function Home({products}) {
         <BannerCont>
           <ImageAside />
         </BannerCont>
-        <BannerCont>
+        {/* <BannerCont>
           {products.map(item => ( <ProductCard key={item.id} {...item} /> ))}
-        </BannerCont>
+        </BannerCont> */}
         <p>Number of Items: {cartCount}</p>
         <p>Total: {totalPrice}</p>
         <button onClick={() => clearCart()}>Remove all items</button>
@@ -47,7 +48,7 @@ export const getServerSideProps = async () => {
         limit: 10,
         expand: ["data.product"],
     });
-    return { props: { products: prices.data } };
+    return { props: { prices } };
   } catch (err){
     console.log(err);
   }
