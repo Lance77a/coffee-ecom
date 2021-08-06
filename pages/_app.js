@@ -1,7 +1,7 @@
 import '../styles/globals.scss'
 import Layout from '../Components/Layout/Layout'
 import { CartProvider } from 'use-shopping-cart'
-// import getStripe from "../lib/stripe/getStripe";
+import getStripe from "../lib/stripe/getStripe";
 
 
 function MyApp({ Component, pageProps }) {
@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <CartProvider mode="payment"
       cartMode='client-only'
-      stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
+      stripe={getStripe}
       currency={"USD"}
       successUrl="https://stripe.com"
       cancelUrl="https://twitter.com/dayhaysoos"
