@@ -9,7 +9,7 @@ import { useShoppingCart } from 'use-shopping-cart'
 import Stripe from 'stripe'
 
 export default function Home({products}) {
-  const { totalPrice, redirectToCheckout, cartCount, clearCart, cartData } = useShoppingCart()
+  const { totalPrice, redirectToCheckout, cartCount, clearCart, } = useShoppingCart()
 
   return (
     <div>
