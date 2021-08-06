@@ -26,9 +26,9 @@ export default function Home({prices}) {
         <BannerCont>
           <ImageAside />
         </BannerCont>
-        {/* <BannerCont>
-          {products.map(item => ( <ProductCard key={item.id} {...item} /> ))}
-        </BannerCont> */}
+        <BannerCont>
+          {prices.map(item => ( <ProductCard key={item.id} {...item} /> ))}
+        </BannerCont>
         <p>Number of Items: {cartCount}</p>
         <p>Total: {totalPrice}</p>
         <button onClick={() => clearCart()}>Remove all items</button>
@@ -38,18 +38,15 @@ export default function Home({prices}) {
   )
 }
 export const getServerSideProps = async () => {
-  try {
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-        apiVersion: "2020-08-27",
-    });
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+    apiVersion: "2020-08-27",
+  });
 
-    const prices = await stripe.prices.list({
-        active: true,
-        limit: 10,
-        expand: ["data.product"],
-    });
-    return { props: { prices } };
-  } catch (err){
-    console.log(err);
-  }
+  const prices = await stripe.prices.list({
+    active: true,
+    limit: 10,
+    expand: ["data.product"],
+  });
+
+  return { props: { prices: prices.data } };
 };
