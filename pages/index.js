@@ -47,7 +47,7 @@ export const getServerSideProps = async () => {
         limit: 10,
         expand: ["data.product"],
     });
-    return { props: { products: prices.data } };ß
+    return { props: { products: prices.data } };
   } catch (err){
     console.log(err);
   }
