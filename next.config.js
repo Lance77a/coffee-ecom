@@ -3,5 +3,4 @@ module.exports = {
   images: {
     domains: ['files.stripe.com'],
   },
-  webpack5: false,
 }
