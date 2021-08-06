@@ -39,7 +39,7 @@ export default function Home({prices}) {
 }
 export const getStaticProps = async () => {
   try {
-    const stripe = new Stripe("sk_test_51JKYVWByqALDynDiTMyczXijzJMghIqEQXoF88rTIAaoVMdSy1ttKmtbByaX6VrZkzAJERzJh3RrQatPAj6slVW600L0sg4gKp")
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 
     const prices = await stripe.prices.list({
       active: true,

@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <CartProvider mode="payment"
       cartMode='client-only'
-      stripe={"pk_test_51JKYVWByqALDynDix3ePZb5cGSGvTqqmMQmeHIZmnIPV3YZt4hRftUAgZuV7R4HFcr4pPhdmHXf8bPsBXhn992HU00NqtKjhkt"}
+      stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
       currency={"USD"}
       successUrl="https://stripe.com"
       cancelUrl="https://twitter.com/dayhaysoos"
