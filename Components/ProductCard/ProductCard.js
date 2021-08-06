@@ -12,7 +12,6 @@ const ProductCard = (product) => {
             price: product.unit_amount,
             currency: product.currency,
         }
-    console.log(addItemObject)
     return (
         <li>
             <figure className={styles.cardCont}>
