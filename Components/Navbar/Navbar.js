@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Navbar.module.scss'
+import Cart from '../Cart/Cart';
 
 const NavData = [
     {
@@ -30,6 +31,9 @@ const Navbar = () => {
                     )
                 })}
             </ul>
+            <div className={styles.cart}>
+                <Cart />
+            </div>
         </nav>
     )
 }

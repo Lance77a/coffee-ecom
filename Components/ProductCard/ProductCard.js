@@ -13,16 +13,17 @@ const ProductCard = (product) => {
             currency: product.currency,
         }
     return (
-        <li>
-            <figure className={styles.cardCont}>
-                <div>
-                    <Image src={`${product.product.images[0]}`} height={100} width={100} layout='responsive' />
+        <li className={styles.cardCont}>
+                <div className={styles.imageCont}>
+                    <div className={styles.imageOverlay}></div>
+                    <Image className={styles.image} src={`${product.product.images[0]}`} layout='fill' />
                 </div>
-                <h1>{product.product.name}</h1>
-                <p>price: {displayPrice}</p>
-                <p>{product.product.description}</p>
-                <button onClick={() => addItem(addItemObject)}>Buy Me?</button>
-            </figure>
+                <div className={styles.textCont}>
+                    <h1>{product.product.name}</h1>
+                    <p>price: {displayPrice}</p>
+                    <p className={styles.overlayDesc}>{product.product.description}</p>
+                </div>
+                <button className={styles.buyButton}onClick={() => addItem(addItemObject)}>Add To Cart</button>
         </li>
     )
 }

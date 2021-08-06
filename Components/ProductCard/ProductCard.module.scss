@@ -1,6 +1,88 @@
+@import '../../styles/variables';
+
 .cardCont {
+    position: relative;
     display: flex;
     flex-direction: column;
-    height: 300px;
-    width: 150px;
+    height: 90%;
+    width: 25%;
+    background-color: transparent;
+    overflow: hidden;
+    
+    color: $dark-green;
+
+    & > .imageCont {
+        position: relative;
+        height: 85%;
+        width: 100%;
+        transition: height 300ms ease-in-out;
+        & > .image {
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    & > .textCont {
+        display: flex;
+        flex-direction: column;
+        height: 15%;
+        width: 100%;
+        text-align: center;
+        transition: transform 300ms ease-in-out;
+
+        & > .overlayDesc {
+            display: none;
+            transform: translateY(-100%);
+        }
+    }
+    
+    & > .buyButton {
+        position: absolute;
+        cursor: pointer;
+        bottom: 0;
+        left: -101%;
+        font-weight: 400;
+        height: 15%;
+        min-height: 2rem;
+        width: 100%;
+        z-index: 2;
+        transition: transform 300ms ease-in-out;
+        // transform: translateX(-100%);
+    }
+}
+
+@media (min-width: 900px){
+    .cardCont {
+        transition: height 300ms ease-in-out;
+        &:hover {
+            transition: transform 300ms ease-in-out;
+            & > .imageCont {
+
+            & > .imageOverlay {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    background-color: $silk;
+                    opacity: 0.7;
+                    z-index: 2;
+                }
+            }
+
+            & > .textCont {
+            transform: translateY(-400%);
+            z-index: 3;
+
+                & > .overlayDesc {
+                    display: block;
+                    transform: translateY(0%);
+                }            
+            }
+
+            & > .buyButton {
+                transform: translateX(101%);
+            }
+        }
+}
 }

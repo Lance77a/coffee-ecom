@@ -1,0 +1,14 @@
+
+.cartInner {
+    display: flex;
+    overflow: hidden;
+    .cartButton {
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+    }
+
+    p {
+        width: 50%;
+    }
+}
