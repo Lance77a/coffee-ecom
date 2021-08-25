@@ -13,12 +13,15 @@ export default function Home({prices}) {
         <LargeCont>
           <Hero />
         </LargeCont>
-        <section className={styles.bannerCont}>
-          <ImageAside />
+        <section>
+          
         </section>
         <BannerCont>
           {prices.map(item => ( <ProductCard key={item.id} {...item} /> ))}
         </BannerCont>
+        <section className={styles.bannerCont}>
+          <ImageAside />
+        </section>
     </>
   )
 }

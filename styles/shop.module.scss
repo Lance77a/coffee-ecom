@@ -22,7 +22,7 @@
         
         grid-template-columns: 1fr;
         grid-template-rows: repeat(16, 1fr);
-        gap: 5vh;
+        gap: 1rem;
 
         & > .productCont {
             display: flex;

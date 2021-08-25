@@ -36,7 +36,7 @@ const Navbar = () => {
         <nav className={styles.navbarCont}>
             <div className={styles.logoCont}>
                 <Link href='/'>
-                    <a href='/' className={styles.logo}>
+                    <a className={styles.logo}>
                         <img src='/images/bean-bag.svg' alt="Company Logo" />
                         <h1>Bean Bag Coffee</h1>
                     </a>
@@ -51,8 +51,7 @@ const Navbar = () => {
                         {cartOpen === false ? <i className="fas fa-shopping-bag"></i> : <i className="fas fa-times"></i>}
                     </button>
                 </div>
-                {/* place multiple components here, and display whichever button is clicked. Cart / nav */}
-                {/* have the onclicks set to a string, if === string then display the proper component inside a cont */}
+                
                 <div className={styles.dropdownCont}>
                     {navOpen === true && 
                         <ul className={navOpen === false ? `${styles.navDropdown}` : `${styles.navDropdown} ${styles.navDropdownOpen}`}>
