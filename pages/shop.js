@@ -1,26 +1,19 @@
-import { useShoppingCart } from 'use-shopping-cart'
 import ProductCard from '../Components/ProductCard/ProductCard'
 import Stripe from 'stripe'
+import styles from '../styles/shop.module.scss'
 
 export default function Shop({products}) {
-  /* Gets the totalPrice and a method for redirecting to stripe */
-  const { totalPrice, redirectToCheckout, cartCount } = useShoppingCart()
-
   return (
-    <div>
-
-      {/* This is where we'll render our cart */}
-      <p>Number of Items: {cartCount}</p>
-      <p>Total: {totalPrice}</p>
-      
-
-      {/* Redirects the user to Stripe */}
-      <button onClick={() => redirectToCheckout()}>Checkout</button>
-
-      <ul>
-       {products.map(item => ( <ProductCard key={item.id} {...item} /> ))}
+    <section className={styles.productDisplay}>
+      <ul className={styles.innerDisplay}>
+          {products.map(item => {
+            return (
+              <li key={item.id} className={styles.productCont}>
+                <ProductCard {...item} />
+              </li>
+          )})}
       </ul>
-    </div>
+    </section>
   )
 }
 

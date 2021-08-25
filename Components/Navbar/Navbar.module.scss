@@ -4,28 +4,100 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 5vh;
-    width: 75%;
+    height: 8vh;
+    width: 100%;
     z-index: 3;
 
     display: flex;
+    justify-content: space-between;
     flex-wrap: nowrap;
 
-
-    & > .navbarInner {
+    & > .logoCont {
         display: flex;
-        justify-content: space-around;
-        background-color: $light-orange;
-        width: 75%;
-
-        & > .navItem {
-            font-size: 2rem;
-            color: $light-green;
-            width: fit-content;
+        flex: 1;
+        padding: 0.1rem 1rem;
+        color: $dark-brown;
+        background-color: #FEFAE099;
+        & > .logo {
+            gap: 1rem;
+            display: flex;
+            & > img {
+                height: 100%;
+            }
+            & > h1 {
+                display: grid;
+                align-items: center;
+                font-size: clamp(1rem, 1vw + 1rem, 2rem);
+                line-height: 1;
+            }
         }
     }
 
-    & > .cart {
-        width: 25%;
+    & > .navMenu {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+            & > .navToggles {
+                display: flex;
+                height: 100%;
+                width: 100%;
+
+                & > .navToggle {
+                    flex: 1;
+                    font-size: clamp(1.5rem, 1vw + 1.5rem, 2rem);
+                    border: none;
+                    background-color: $light-orange;
+                    color: $dark-green;
+                    cursor: pointer;
+                    &:nth-of-type(1){
+                        background-color: $light-orange;
+                    }
+                    &:nth-of-type(2){
+                        background-color: $dark-orange;
+                    }
+                }
+            }
+
+            & > .dropdownCont {
+                position: absolute;
+                top: 8vh;
+                width: 100%;
+                background-color: $dark-orange;
+            
+                & > .navDropdown {
+                display: flex;
+                justify-content: space-around;
+                
+                width: 100%;
+                display: none;
+
+                &.navDropdownOpen {
+                    display: block;
+                    background-color: $light-orange;
+                }
+
+                & > .navItem {
+                    font-size: 2rem;
+                    color: $light-green;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}
+
+.active {
+    color: red !important;
+}
+
+@media(min-width: 600px){
+    .navbarCont {
+        width: 100%;
+
+        & > .logo {
+            flex: 2;
+        }
     }
 }

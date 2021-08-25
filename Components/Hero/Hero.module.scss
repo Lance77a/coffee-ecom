@@ -1,15 +1,48 @@
-.heroInner {
+@import '../../styles/variables';
+
+
+.heroCont {
     position: relative;
     height: 100%;
     width: 100%;
-    background-position-x: 35%;
-    background-position-y: 65%;
-    background-repeat: no-repeat;
-    background-size: cover;
+
+        & > .heroBg {
+        height: 100%;
+        width: 100%;
+        background-position-x: 35%;
+        background-position-y: 65%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
+    & > .heading {
+        z-index: 2;
+        position: absolute;
+        top: -0.4px;
+        right: 0;
+        height: 10%;
+        width: 100%;
+        clip-path: polygon(0 0, 100% 0%, 100% 0, 100% 100%);
+        background: $dark-brown;
+        background: linear-gradient(to bottom, $silk 0%, #FEFAE055 100%);
+
+        color: $light-green;
+        text-align: end;
+        font-size: clamp(1.2rem, 1vw + 1.2rem, 7rem);
+    }
 }
 
+
 @media(min-width: 600px){
-    .heroInner {
-        background-position-x: center;
+    .heroCont {
+            .heroBg {
+            background-position-x: center;
+        }
+
+        .heading {
+            width: 100%;
+            height: 30%;
+        }
     }
 }

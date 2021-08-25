@@ -21,6 +21,7 @@ ol,li,figure,figcaption,blockquote,dl,dd {
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  min-width: 325px;
   background-color: #FEFAE0;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;

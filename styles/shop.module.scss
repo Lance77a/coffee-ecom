@@ -1,0 +1,54 @@
+@import './variables.scss';
+
+.productDisplay {
+    display: flex;
+    min-height: 1800px;
+    height: auto;
+    
+    margin: 0 auto;
+    width: 95%;
+    background-image: url('../public/images/roasterBg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    border: 1px solid $light-brown;
+    overflow: hidden;
+
+    & > .innerDisplay {
+        padding: 2%;
+        background-color: #606C3899;
+        flex: 1;
+        display: grid;
+        
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(16, 1fr);
+        gap: 5vh;
+
+        & > .productCont {
+            display: flex;
+            width: 100%;
+            height: 400px;
+            
+        }
+    }
+}
+
+@media(min-width: 500px) {
+    .productDisplay {
+        & > .innerDisplay {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+        }
+    }
+}
+
+@media(min-width: 775px) {
+    .productDisplay {
+        min-height: 1800px;
+        background-repeat: no-repeat;
+        & > .innerDisplay {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+    }
+}

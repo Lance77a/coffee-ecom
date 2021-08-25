@@ -1,8 +1,9 @@
 @import './variables.scss';
 
-.heroCont {
-    height: 80vh;
+.bannerCont {
+    height: clamp(10rem, 20rem + 5vw, 900px);
     width: 100%;
-    
-    padding: 5rem 0;
+    margin-bottom: 3rem;
+    border: 2px solid black;
+    display: flex;
 }

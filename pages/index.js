@@ -9,19 +9,17 @@ import Stripe from 'stripe'
 
 export default function Home({prices}) {
   return (
-    <div>
-      <main>
+    <>
         <LargeCont>
           <Hero />
         </LargeCont>
-        <BannerCont>
+        <section className={styles.bannerCont}>
           <ImageAside />
-        </BannerCont>
+        </section>
         <BannerCont>
           {prices.map(item => ( <ProductCard key={item.id} {...item} /> ))}
         </BannerCont>
-      </main>
-    </div>
+    </>
   )
 }
 
@@ -31,7 +29,7 @@ export const getServerSideProps = async () => {
 
     const prices = await stripe.prices.list({
       active: true,
-      limit: 10,
+      limit: 4,
       expand: ["data.product"],
     });
 

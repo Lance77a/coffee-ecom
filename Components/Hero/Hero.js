@@ -1,11 +1,11 @@
 import styles from './Hero.module.scss'
-import StyledButton from '../StyledButton/StyledButton'
 
 const Hero = () => {
     return (
-        <div className={styles.heroInner} style={{backgroundImage: `url('/images/hero1.jpg')`}}>
-            <StyledButton content='Welcome' />
-        </div>
+        <header className={styles.heroCont}>
+            <h1 className={styles.heading}>Welcome, <span>Grab whatever bag you like!</span></h1>
+            <div className={styles.heroBg} style={{backgroundImage: `url('/images/hero1.jpg')`}}></div>
+        </header>
     )
 }
     

@@ -4,20 +4,20 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 90%;
-    width: 25%;
-    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    background-color: $silk;
     overflow: hidden;
+    border-radius: 1%;
     
     color: $dark-green;
 
     & > .imageCont {
         position: relative;
-        height: 85%;
+        height: 100%;
         width: 100%;
         transition: height 300ms ease-in-out;
-        & > .image {
-            height: 100%;
+        & .image {
             object-fit: cover;
         }
     }
@@ -40,18 +40,18 @@
         position: absolute;
         cursor: pointer;
         bottom: 0;
-        left: -101%;
+        left: -100%;
         font-weight: 400;
         height: 15%;
         min-height: 2rem;
         width: 100%;
         z-index: 2;
         transition: transform 300ms ease-in-out;
-        // transform: translateX(-100%);
+        border: $light-green 1px solid;
     }
 }
 
-@media (min-width: 900px){
+@media (min-width: 600px){
     .cardCont {
         transition: height 300ms ease-in-out;
         &:hover {
@@ -71,7 +71,7 @@
             }
 
             & > .textCont {
-            transform: translateY(-400%);
+            transform: translateY(-300%);
             z-index: 3;
 
                 & > .overlayDesc {
@@ -81,8 +81,8 @@
             }
 
             & > .buyButton {
-                transform: translateX(101%);
+                transform: translateX(100%);
             }
         }
-}
+    }
 }

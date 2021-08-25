@@ -1,4 +1,23 @@
 .asideInner {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: black;
+
+    & .imageTop {
+        object-fit: cover;
+        clip-path: polygon(100% 0, 0 0, 0 100%);
+        }
+        
+    & .imageBottom {
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    }
+}
+
+@media(min-width: 600px) {
+    .asideInner {
+        flex-direction: row;
+    }
 }
