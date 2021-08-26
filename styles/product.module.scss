@@ -1,0 +1,17 @@
+.productCont {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    & > .imageCont {
+        position: relative;
+        border-radius: 1rem;
+        min-height: 300px;
+        min-width: 300px;
+        width: 100%;
+        height: 100%;
+        & .image {
+            object-fit: cover;
+        }
+    }
+}

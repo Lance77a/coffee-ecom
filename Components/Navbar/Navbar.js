@@ -42,7 +42,6 @@ const Navbar = () => {
                     </a>
                 </Link>
            </div>
-            <div className={styles.navMenu}>
                 <div className={styles.navToggles}>
                     <button className={styles.navToggle} onClick={() => toggleNav()}>
                         {navOpen === false ? <i className="fas fa-bars"></i> : <i className="fas fa-times"></i>}
@@ -54,10 +53,10 @@ const Navbar = () => {
                 
                 <div className={styles.dropdownCont}>
                     {navOpen === true && 
-                        <ul className={navOpen === false ? `${styles.navDropdown}` : `${styles.navDropdown} ${styles.navDropdownOpen}`}>
+                        <ul className={styles.navDropdown}>
                             {NavData.map(item => {
                                 return (
-                                    <li key={item.name} className={styles.navItem}>
+                                    <li onClick={() => toggleNav()} key={item.name} className={styles.navItem}>
                                         <Link href={item.href}>
                                             <a>{item.name}</a>
                                         </Link>
@@ -70,7 +69,6 @@ const Navbar = () => {
                        <Cart />
                     }
                 </div>
-            </div>
         </nav>
     )
 }

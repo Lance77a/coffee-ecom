@@ -1,6 +1,6 @@
-import ProductCard from '../Components/ProductCard/ProductCard'
+import ProductCard from '../../Components/ProductCard/ProductCard'
 import Stripe from 'stripe'
-import styles from '../styles/shop.module.scss'
+import styles from '../../styles/shop.module.scss'
 
 export default function Shop({products}) {
   return (

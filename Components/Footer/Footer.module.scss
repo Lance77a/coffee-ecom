@@ -5,4 +5,16 @@
     bottom: 0;
     width: 100%;
     background-color: $dark-brown;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 600px){
+    .footerCont {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
 }
