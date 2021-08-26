@@ -1,6 +1,5 @@
 .container {
-    height: 80vh;
-    min-height: 500px;
+    height: clamp(500px, 80vh, 650px);
     width: 100%;
     margin-bottom: 3rem;
 }

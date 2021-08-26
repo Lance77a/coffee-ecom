@@ -19,11 +19,13 @@ const ProductCard = (product) => {
                     <Image className={styles.image} src={`${product.product.images[0]}`} layout='fill' />
                 </div>
                 <div className={styles.textCont}>
-                    <h1>{product.product.name}</h1>
-                    <p>price: {displayPrice}</p>
-                    <p className={styles.overlayDesc}>{product.product.description}</p>
+                        <h1>{product.product.name}</h1>
+                        <p>price: {displayPrice}</p>
+                        <p className={styles.overlayDesc}>{product.product.description}</p>
                 </div>
-                <button className={styles.buyButton}onClick={() => addItem(addItemObject)}>Add To Cart</button>
+                <button className={styles.buyButton}onClick={() => addItem(addItemObject)}>
+                    <span>Add To Cart</span>
+                </button>
         </div>
     )
 }

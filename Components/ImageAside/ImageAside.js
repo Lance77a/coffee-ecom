@@ -5,12 +5,8 @@ import roaster2 from '../../public/images/roaster2.jpg'
 
 const ImageAside = () => (
     <div className={styles.asideInner}>
-        {/* <div className={styles.imageCont}> */}
-            <Image className={styles.imageTop} src={roaster1} alt="roaster" layout='fill' />
-        {/* </div> */}
-        {/* <div className={styles.imageCont}> */}
-            <Image className={styles.imageBottom} src={roaster2} alt="roaster" layout='fill' />
-        {/* </div> */}
+        <Image className={styles.imageTop} src={roaster1} alt="roaster" layout='fill' />
+        <Image className={styles.imageBottom} src={roaster2} alt="roaster" layout='fill' />
     </div>
 )
 

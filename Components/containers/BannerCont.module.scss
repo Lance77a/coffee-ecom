@@ -1,8 +1,10 @@
+@import '../../styles/variables';
+
 .container {
     height: 1800px;
     width: 100%;
     margin-bottom: 3rem;
-    border: 2px solid black;
+    
     display: flex;
     flex-direction: column;
 
