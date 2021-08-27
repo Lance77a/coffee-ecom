@@ -43,7 +43,8 @@ const Cart = () => {
                     </div>
                 :   <ul className={styles.cartItems}>
                         { cartArr.map(item => {
-                            return <CartCard key={item.id} 
+                            return (
+                            <CartCard key={item.id} 
                             image={item.image}
                             name={item.name} 
                             size={item.product_metadata.size}
@@ -51,7 +52,7 @@ const Cart = () => {
                             id={item.id}
                             quantity={item.quantity}
                             />
-                        })}
+                        )})}
                     </ul>
             }
         </div>
