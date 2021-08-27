@@ -10,7 +10,7 @@ const CartCard = (item) => {
                 <Image className={styles.image} src={item.image} layout="fill" />
             </div>
             <div className={styles.blurb}>
-                <p>{item.name}({item.size})</p>
+                <p>{item.name}({item.description})</p>
                 <p>{item.price}</p>
                 <div className={styles.quantityCont}>
                     <button onClick={() => decrementItem(item.id)}><i className="fas fa-minus-circle"></i></button>

@@ -28,7 +28,7 @@ export const getStaticProps = async () => {
         limit: 10,
         expand: ["data.product"],
     });
-    return { props: { products: prices.data } };
+    return { props: { products: prices.data }, revalidate: 60 };
   } catch (err){
     console.log(err);
   }

@@ -23,6 +23,7 @@ const Cart = () => {
 
     return (
         <div className={styles.cartInner}>
+            {console.log(cartArr)}
             <div className={styles.cartControls}>
                 <p>({cartCount})<i className="fas fa-shopping-bag"></i></p>
                 <p>Cart Total: {formattedTotalPrice}</p>
@@ -47,7 +48,7 @@ const Cart = () => {
                             <CartCard key={item.id} 
                             image={item.image}
                             name={item.name} 
-                            size={item.product_metadata.size}
+                            description={item.description}
                             price={item.formattedPrice}
                             id={item.id}
                             quantity={item.quantity}
