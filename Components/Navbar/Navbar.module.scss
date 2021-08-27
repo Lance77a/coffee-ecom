@@ -7,7 +7,7 @@
     height: 4rem;
     width: 100%;
     max-width: 1800px;
-    z-index: 3;
+    z-index: 10;
     padding: 0.2rem;
 
     display: flex;
@@ -45,6 +45,8 @@
                 gap: 0.25rem;
 
                 & > .navToggle {
+                    display: grid;
+                    place-items: center;
                     flex: 1;
                     font-size: clamp(1.5rem, 2vw + 1.5rem, 2.5rem);
                     width: clamp(3rem, 10vw + 3rem, 145px);
@@ -76,6 +78,8 @@
                 flex: 1;
                 padding: 1rem;
                 background-color: #DDA15Eee;
+                border: solid 1px $dark-brown;
+                border-radius: 1rem;
                 
                     & > .navItem {
                         font-size: 2.5rem;

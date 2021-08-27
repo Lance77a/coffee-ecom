@@ -13,11 +13,12 @@ export default function Product({product}) {
     const currencyToDisplay = (num) => (num/100).toFixed(2);
     const displayPrice = currencyToDisplay(item.unit_amount)
     const addItemObject = {
-        id: item.product.id,
+        id: item.id,
         name: item.product.name,
         price: item.unit_amount,
         currency: item.currency,
         image: item.product.images[0],
+        product_metadata: { weight: item.product.unit_label },
     }
 
     const handleChange = (e) => setQuantity(e.target.value);

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './Navbar.module.scss'
 import Cart from '../Cart/Cart';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const NavData = [
     {
@@ -19,7 +19,6 @@ const NavData = [
 ]
 
 const Navbar = () => {
-    const [dropdownOpen, setDropdownOpen ] = useState(false)
     const [ navOpen, setNavOpen ] = useState(false)
     const [ cartOpen, setCartOpen ] = useState(false);
 

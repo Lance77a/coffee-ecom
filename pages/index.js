@@ -26,7 +26,7 @@ export default function Home({prices}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY)
 

@@ -1,54 +1,75 @@
-@import '../../styles/variables';
+@import "../../styles/variables";
 
 .cartInner {
-    display: flex;
-    flex-direction: column;
-    overflow: scroll;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 5fr;
     background-color: $dark-orange;
-    padding: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    max-height: 100vh;
+    border: solid 1px $dark-brown;
+    border-radius: 1rem;
+
+    & > .emptyCartCont {
+        height: 80%;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 5fr 1fr;
+        & > .emptyImageCont {
+            position: relative;
+            height: 50%;
+            width: 50%;
+            & > .emptyImage {
+                object-fit: contain;
+            }
+        }
+    }
 
     & > .cartItems {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
+        min-height: 300px;
+        max-height: 60vh;
+        overflow: scroll;
 
         & > .cartCard {
             display: flex;
             background-color: $silk;
             border-radius: 1rem;
             overflow: hidden;
+            min-height: 100px;
+            padding: 0.5rem 0.75rem;
 
             & > .imageCont {
                 position: relative;
-                height: 100px;
+                height: auto;
                 width: 100px;
-                & > .image {
-                    object-fit: cover;
+                & .image {
+                    object-fit: contain;
+                    border-radius: 1rem;
                 }
             }
             & > .blurb {
                 display: flex;
                 flex-direction: column;
-                    & > .quantityCont {
-                        display: flex;
-                        
-                        & > button {
-                            height: 2rem;
-                            width: 2rem;
-                            border-radius: 50%;
-                        }
+                & > .quantityCont {
+                    display: flex;
+
+                    & > button {
+                        height: 2rem;
+                        width: 2rem;
+                        border-radius: 50%;
                     }
+                }
             }
-            
-
-            
-
-
         }
-
     }
-    .cartInfo {
+    .cartControls {
+        margin-top: auto;
         display: flex;
         flex-wrap: wrap;
         width: 100%;
@@ -63,5 +84,14 @@
 
     p {
         width: 50%;
+    }
+}
+
+
+@media(min-width: 600px) {
+    .cartInner {
+        & > .cartItems {
+            width: 100%;
+        }
     }
 }

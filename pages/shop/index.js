@@ -17,7 +17,7 @@ export default function Shop({products}) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
         apiVersion: "2020-08-27",
