@@ -6,7 +6,7 @@ const CartCard = (item) => {
     const { incrementItem, decrementItem } = useShoppingCart()
     return (
         <li className={styles.cartCard}>
-            {/* <div className={styles.imageCont}>
+            <div className={styles.imageCont}>
                 <Image className={styles.image} src={item.image} layout="fill" />
             </div>
             <div className={styles.blurb}>
@@ -17,7 +17,7 @@ const CartCard = (item) => {
                     <p>Qty: {item.quantity}</p>
                     <button onClick={() => incrementItem(item.id)}><i className="fas fa-plus-circle"></i></button>
                 </div>
-            </div> */}
+            </div>
         </li>
     )
 }
