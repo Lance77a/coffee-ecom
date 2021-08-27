@@ -3,9 +3,10 @@ import styles from './Cart.module.scss'
 import Image from 'next/image'
 import empty_cart from '../../public/images/empty_cart.jpg'
 import { useState } from 'react'
+import CartCard from './CartCard'
 
 const Cart = () => {
-    const { formattedTotalPrice, redirectToCheckout, cartCount, cartDetails, clearCart, incrementItem, decrementItem } = useShoppingCart()
+    const { formattedTotalPrice, redirectToCheckout, cartCount, cartDetails, clearCart } = useShoppingCart()
     const cartArr = Object.values(cartDetails);
     const [ status, setStatus ] = useState('idle')
   
@@ -42,22 +43,17 @@ const Cart = () => {
                     </div>
                 :   <ul className={styles.cartItems}>
                         { cartArr.map(item => {
-                            return <li key={item.id} className={styles.cartCard}>
-                                <div className={styles.imageCont}>
-                                    <Image className={styles.image} src={item.image} layout="fill" />
-                                </div>
-                                <div className={styles.blurb}>
-                                    <p>{item.name}({item.product_metadata.weight})</p>
-                                    <p>{item.formattedPrice}</p>
-                                    <div className={styles.quantityCont}>
-                                        <button onClick={() => decrementItem(item.id)}><i className="fas fa-minus-circle"></i></button>
-                                        <p>Qty: {item.quantity}</p>
-                                        <button onClick={() => incrementItem(item.id)}><i className="fas fa-plus-circle"></i></button>
-                                    </div>
-                                </div>
-                            </li>
+                            return <CartCard key={item.id} 
+                            image={item.image}
+                            name={item.name} 
+                            size={item.product_metadata.size}
+                            price={item.formattedPrice}
+                            id={item.id}
+                            quantity={item.quantity}
+                            />
                         })}
-                    </ul> }
+                    </ul>
+            }
         </div>
     )
 }

@@ -13,7 +13,7 @@ const ProductCard = (product) => {
                 price: product.unit_amount,
                 currency: product.currency,
                 image: product.product.images[0],
-                product_metadata: { weight: product.product.unit_label },
+                product_metadata: { size: product.product.unit_label },
             }
     return (
         <div className={styles.cardCont}>

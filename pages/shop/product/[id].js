@@ -18,7 +18,7 @@ export default function Product({product}) {
         price: item.unit_amount,
         currency: item.currency,
         image: item.product.images[0],
-        product_metadata: { weight: item.product.unit_label },
+        product_metadata: { size: item.product.unit_label },
     }
 
     const handleChange = (e) => setQuantity(e.target.value);

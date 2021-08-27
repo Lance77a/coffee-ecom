@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.cartCard {
+    display: flex;
+    background-color: $silk;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 100px;
+    padding: 0.5rem 0.75rem;
+
+    & > .imageCont {
+        position: relative;
+        height: auto;
+        width: 100px;
+        & .image {
+            object-fit: contain;
+            border-radius: 1rem;
+        }
+    }
+    & > .blurb {
+        display: flex;
+        flex-direction: column;
+        & > .quantityCont {
+            display: flex;
+
+            & > button {
+                height: 2rem;
+                width: 2rem;
+                border-radius: 50%;
+            }
+        }
+    }
+}
