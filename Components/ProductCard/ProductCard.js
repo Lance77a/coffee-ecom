@@ -12,11 +12,12 @@ const ProductCard = (product) => {
                 name: product.product.name,
                 price: product.unit_amount,
                 currency: product.currency,
+                image: product.product.images[0],
             }
     return (
         <div className={styles.cardCont}>
                 <div className={styles.imageCont}>
-                    <Image className={styles.image} src={`${product.product.images[0]}`} layout='fill' />
+                    <Image className={styles.image} src={product.product.images[0]} layout='fill' />
                 </div>
                 <div className={styles.textCont}>
                         <h1>{product.product.name}</h1>

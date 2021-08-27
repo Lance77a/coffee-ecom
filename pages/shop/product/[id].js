@@ -17,6 +17,7 @@ export default function Product({product}) {
         name: item.product.name,
         price: item.unit_amount,
         currency: item.currency,
+        image: item.product.images[0],
     }
 
     const handleChange = (e) => setQuantity(e.target.value);

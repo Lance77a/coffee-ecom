@@ -81,6 +81,9 @@
                         font-size: 2.5rem;
                         font-weight: 400;
                         color: $light-green;
+                        &:hover {
+                            color: $silk;
+                        }
                     }
             }
         }
@@ -89,8 +92,10 @@
 
 @media(min-width: 600px){
     .navbarCont {
+        padding: 0.2rem 0.5rem;
         & > .dropdownCont {
-            width: 47.5%;
+            width: 294px;
+            right: 0.5rem;
         }
     }
 }

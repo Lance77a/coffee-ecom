@@ -1,11 +1,64 @@
+@import '../../styles/variables';
 
 .cartInner {
     display: flex;
-    overflow: hidden;
-    .cartButton {
-        display: inline-block;
-        width: 50%;
-        height: 100%;
+    flex-direction: column;
+    overflow: scroll;
+    background-color: $dark-orange;
+    padding: 0.5rem;
+
+    & > .cartItems {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+
+        & > .cartCard {
+            display: flex;
+            background-color: $silk;
+            border-radius: 1rem;
+            overflow: hidden;
+
+            & > .imageCont {
+                position: relative;
+                height: 100px;
+                width: 100px;
+                & > .image {
+                    object-fit: cover;
+                }
+            }
+            & > .blurb {
+                display: flex;
+                flex-direction: column;
+                    & > .quantityCont {
+                        display: flex;
+                        
+                        & > button {
+                            height: 2rem;
+                            width: 2rem;
+                            border-radius: 50%;
+                        }
+                    }
+            }
+            
+
+            
+
+
+        }
+
+    }
+    .cartInfo {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        p {
+            width: 50%;
+        }
+        .cartButton {
+            width: 50%;
+            height: 50%;
+        }
     }
 
     p {
