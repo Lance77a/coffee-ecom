@@ -6,7 +6,7 @@
     left: 0;
     height: 4rem;
     width: 100%;
-    max-width: 1800px;
+    max-width: 1980px;
     z-index: 10;
     padding: 0.2rem;
 
@@ -66,8 +66,8 @@
             & > .dropdownCont {
                 position: fixed;
                 top: 4rem;
+                bottom: 1rem;
                 right: 2.5%;
-                height: fit-content;
                 width: 95%;
                 border-radius: 1rem;
                 overflow: hidden;

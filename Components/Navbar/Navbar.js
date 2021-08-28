@@ -24,11 +24,11 @@ const Navbar = () => {
 
     const toggleNav = () => {
         setCartOpen(false)
-        navOpen === false ? setNavOpen(true) : setNavOpen(false)
+        !navOpen ? setNavOpen(true) : setNavOpen(false)
     }
     const toggleCart = () => {
         setNavOpen(false)
-        cartOpen === false ? setCartOpen(true) : setCartOpen(false)
+        !cartOpen ? setCartOpen(true) : setCartOpen(false)
     }
 
     return (
@@ -50,8 +50,9 @@ const Navbar = () => {
                     </button>
                 </div>
                 
+                { (navOpen || cartOpen) &&
                 <div className={styles.dropdownCont}>
-                    {navOpen === true && 
+                    {navOpen && 
                         <ul className={styles.navDropdown}>
                             {NavData.map(item => {
                                 return (
@@ -64,10 +65,10 @@ const Navbar = () => {
                             })}
                         </ul>
                     }
-                    {cartOpen === true && 
+                    {cartOpen && 
                        <Cart />
                     }
-                </div>
+                </div> }
         </nav>
     )
 }

@@ -1,7 +1,9 @@
 @import "../../styles/variables";
 
 .cartCard {
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr;
     background-color: $silk;
     border-radius: 1rem;
     overflow: hidden;
@@ -11,22 +13,45 @@
     & > .imageCont {
         position: relative;
         height: auto;
-        width: 100px;
         & .image {
             object-fit: contain;
-            border-radius: 1rem;
         }
     }
     & > .blurb {
         display: flex;
+        padding: 0 0.25rem;
+        color: $dark-green;
+        font-weight: 500;
+        
         flex-direction: column;
+        text-align: center;
+        & > p {
+            width: 100%;
+            text-align: center;
+            overflow:hidden; 
+            white-space:nowrap; 
+            text-overflow: ellipsis;
+        }
         & > .quantityCont {
             display: flex;
+            width: 100%;
+            justify-content: center;
 
             & > button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: 2rem;
                 width: 2rem;
                 border-radius: 50%;
+                border: none;
+                font-size: 2rem;
+                &:nth-of-type(1) {
+                    color: $light-orange;
+                }
+                &:nth-of-type(2) {
+                    color: $light-green;
+                }
             }
         }
     }
