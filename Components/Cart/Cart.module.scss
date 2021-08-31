@@ -1,30 +1,17 @@
 @import "../../styles/variables";
 
 .cartInner {
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: 1fr 5fr;
-    background-color: $dark-orange;
-    padding: 0.5rem 1rem;
-    width: 100%;
-    max-height: 80vh;
-
-    border: solid 1px $dark-brown;
-    border-radius: 1rem;
-
     & > .cartItems {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
-        min-height: fit-content;
-        height: fit-content;
-        max-height: 70vh;
-        overflow-y: auto;
+        margin: 1rem 0;
         padding: 1rem 0;
     }
-    .cartControls {
+    & > .cartControls {
         margin-top: auto;
+        margin-bottom: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -47,9 +34,17 @@
                 background-color: $silk;
                 color: $dark-green;
                 font-weight: 500;
+                cursor: pointer;
+                    &:hover  {
+                        color: $light-orange;
+                    }
+                    &:active {
+                        background-color: $light-brown;
+                    }
+                }
             }
         }
-    }
+    
 
     p {
         width: 50%;

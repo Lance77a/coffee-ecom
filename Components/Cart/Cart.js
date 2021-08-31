@@ -1,9 +1,7 @@
 import { useShoppingCart } from 'use-shopping-cart'
 import styles from './Cart.module.scss'
-import Image from 'next/image'
-import empty_cart from '../../public/images/empty_cart.jpg'
 import { useState } from 'react'
-import CartCard from './CartCard'
+import CartCard from '../CartCard/CartCard'
 
 const Cart = () => {
     const { formattedTotalPrice, redirectToCheckout, cartCount, cartDetails, clearCart } = useShoppingCart()
@@ -23,6 +21,7 @@ const Cart = () => {
 
     return (
         <div className={styles.cartInner}>
+            {console.log(cartArr)}
             <div className={styles.cartControls}>
                 <div>
                     <p>Cart Total: {formattedTotalPrice}</p>
@@ -45,6 +44,7 @@ const Cart = () => {
                             description={item.description}
                             price={item.formattedPrice}
                             id={item.id}
+                            prod_id={item.sku}
                             quantity={item.quantity}
                         />
                     )

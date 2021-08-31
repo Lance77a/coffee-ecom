@@ -1,17 +1,116 @@
+@import "./variables.scss";
+
 .productCont {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     width: 90%;
+    min-height: 500px;
+    height: auto;
+    padding: 0.5rem;
     margin: 0 auto;
+    background-color: #606c3899;
+    border: 1px solid $dark-brown;
+    color: $silk;
+
     & > .imageCont {
         position: relative;
         border-radius: 1rem;
-        min-height: 300px;
-        min-width: 300px;
-        width: 100%;
-        height: 100%;
+        min-height: 200px;
+        min-width: 200px;
+        flex: 1;
         & .image {
             object-fit: cover;
+        }
+    }
+
+    & > .blurb {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 0.5rem;
+        width: 100%;
+        flex: 1;
+        gap: 0.5rem;
+
+        & > .blurbHeader {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            & > h1 {
+                width: 50%;
+            }
+
+            & > p:nth-of-type(1) {
+                width: 50%;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+
+        & > .desc {
+            height: 100%;
+            width: 100%;
+            display: grid;
+            align-items: center;
+            text-align: center;
+            background-color: $silk;
+            border: $dark-orange 1px solid;
+            color: $dark-green;
+            font-weight: 400;
+            
+        }
+
+        & > .formCont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.2rem;
+
+            & > select {
+                background-color: $light-orange;
+                border: $dark-orange 1px solid;
+                color: $dark-green;
+                width: 3rem;
+            }
+            & > button {
+                height: 3rem;
+                width: 100%;
+                background-color: $light-orange;
+                border: $dark-orange 1px solid;
+                color: $dark-green;
+                font-size: 1.5rem;
+                font-weight: 500;
+                &:active {
+                    color: $light-green;
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .productCont {
+        width: 80%;
+    }
+}
+
+@media (min-width: 800px){
+    .productCont {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        max-width: 1200px;
+        width: 90%;
+        height: 75vh;
+
+        & > .blurb {
+            align-self: center;
+            height: 60%;
+            padding: 1rem 2rem;
         }
     }
 }

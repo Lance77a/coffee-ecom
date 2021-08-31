@@ -3,12 +3,13 @@
 .navbarCont {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 2%;
+    right: 2%;
     height: 4rem;
-    width: 100%;
+    width: 96%;
     max-width: 1980px;
     z-index: 10;
-    padding: 0.2rem;
+    padding-top: 0.1rem;
 
     display: flex;
     justify-content: space-between;
@@ -17,7 +18,6 @@
 
     & > .logoCont {
         display: flex;
-        padding: 0.1rem 0.5rem;
         color: $dark-brown;
         background-color: #FEFAE099;
         border-radius: 2rem;
@@ -65,21 +65,32 @@
 
             & > .dropdownCont {
                 position: fixed;
-                top: 4rem;
-                bottom: 1rem;
-                right: 2.5%;
+                top: 4.5rem;
+                bottom: 2vh;
+                right: 2%;
                 width: 95%;
                 border-radius: 1rem;
-                overflow: hidden;
-            
+                overflow: auto;
+                scrollbar-width: none; /* Firefox */
+                -ms-overflow-style: none;  /* IE 10+ */
+
+                background-color: #BC6C25ee;
+                padding: 0.5rem 1rem;
+
+                border: solid 1px $dark-brown;
+                border-radius: 1rem;
+                    &::-webkit-scrollbar {
+                        width: 0px;
+                        background: transparent; /* Chrome/Safari/Webkit */
+                    }
+                    &.navCont {
+                        height: fit-content;
+                        background-color: #DDA15Eee;
+                    }
                 & > .navDropdown {
                 display: flex;
                 flex-direction: column;
                 flex: 1;
-                padding: 1rem;
-                background-color: #DDA15Eee;
-                border: solid 1px $dark-brown;
-                border-radius: 1rem;
                 
                     & > .navItem {
                         font-size: 2.5rem;
@@ -96,10 +107,8 @@
 
 @media(min-width: 600px){
     .navbarCont {
-        padding: 0.2rem 0.5rem;
         & > .dropdownCont {
             width: 294px;
-            right: 0.5rem;
         }
     }
 }

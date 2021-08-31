@@ -51,7 +51,7 @@ const Navbar = () => {
                 </div>
                 
                 { (navOpen || cartOpen) &&
-                <div className={styles.dropdownCont}>
+                <div className={cartOpen ? `${styles.dropdownCont}` : `${styles.dropdownCont} ${styles.navCont}`} >
                     {navOpen && 
                         <ul className={styles.navDropdown}>
                             {NavData.map(item => {

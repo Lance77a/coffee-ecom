@@ -14,6 +14,7 @@ export default function Product({product}) {
     const displayPrice = currencyToDisplay(item.unit_amount)
     const addItemObject = {
         id: item.id,
+        sku: item.product.id,
         name: item.product.name,
         price: item.unit_amount,
         currency: item.currency,
@@ -35,21 +36,20 @@ export default function Product({product}) {
                 <Image className={styles.image} src={item.product.images[0]} alt={item.product.description} layout='fill'/>
             </div>
             <div className={styles.blurb}>
-                <h1>{item.product.name}</h1>
-                <p>{item.product.description}</p>
-                <div className={styles.priceCont}>
-                    <p>{displayPrice}</p>
-                    <form onSubmit={handleSubmit}>
-                        <label htmlFor="quantity">How Many?:</label>
-                            <select onChange={handleChange} value={quantity} name="quantity" id="quantity">
-                                {quantityArr.map(item => {
-                                    return <option key={item} value={item} >{item}</option>
-                                })}
-                            </select>
-                            <button>Add To Cart</button>
-                    </form>
-                    <p>{quantity}</p>
+                <div className={styles.blurbHeader}>
+                    <h1>{item.product.name}</h1>
+                    <p>${displayPrice}</p>
                 </div>
+                <p className={styles.desc} >{item.product.description}</p>
+                <form className={styles.formCont} onSubmit={handleSubmit}>
+                    <label htmlFor="quantity">{item.product.unit_label} Bag: </label>
+                    <select onChange={handleChange} value={quantity} name="quantity" id="quantity">
+                        {quantityArr.map(item => {
+                            return <option key={item} value={item} >{item}</option>
+                        })}
+                    </select>
+                    <button>Add To Cart</button>
+                </form>
             </div>
         </section>
     )

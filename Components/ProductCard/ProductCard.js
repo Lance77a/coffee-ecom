@@ -9,6 +9,7 @@ const ProductCard = (product) => {
     const displayPrice = currencyToDisplay(product.unit_amount)
     const addItemObject = {
                 id: product.id,
+                sku: product.product.id,
                 name: product.product.name,
                 price: product.unit_amount,
                 currency: product.currency,
