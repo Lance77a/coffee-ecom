@@ -56,7 +56,7 @@ const Navbar = () => {
                         <ul className={styles.navDropdown}>
                             {NavData.map(item => {
                                 return (
-                                    <li onClick={() => toggleNav()} key={item.name} className={styles.navItem}>
+                                    <li onClick={() => toggleNav()} key={item.name} className={styles.navItem} >
                                         <Link href={item.href}>
                                             <a>{item.name}</a>
                                         </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
                         </ul>
                     }
                     {cartOpen && 
-                       <Cart />
+                       <Cart toggleCart={toggleCart} />
                     }
                 </div> }
         </nav>

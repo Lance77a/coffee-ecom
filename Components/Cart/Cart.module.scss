@@ -17,6 +17,13 @@
         justify-content: space-between;
         width: 100%;
         font-size: 1.2rem;
+        & > .statusCont {
+            margin-bottom: 0.5rem;
+            & > p { 
+                color: $silk;
+                font-size: 1.5rem;
+            }
+        }
         & > div {
             display: flex;
             height: 2rem;

@@ -18,10 +18,12 @@
 
     & > .logoCont {
         display: flex;
+        justify-content: center;
         color: $dark-brown;
         background-color: #FEFAE099;
         border-radius: 2rem;
-        width: 55%;
+        width: fit-content;
+        padding: 0 0.5rem;
         max-width: 325px;
         & > .logo {
             gap: 0.2rem;

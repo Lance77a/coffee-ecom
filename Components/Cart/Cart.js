@@ -3,7 +3,7 @@ import styles from './Cart.module.scss'
 import { useState } from 'react'
 import CartCard from '../CartCard/CartCard'
 
-const Cart = () => {
+const Cart = (props) => {
     const { formattedTotalPrice, redirectToCheckout, cartCount, cartDetails, clearCart } = useShoppingCart()
     const cartArr = Object.values(cartDetails);
     const [status, setStatus] = useState('idle')
@@ -27,7 +27,7 @@ const Cart = () => {
                     <p>Cart Total: {formattedTotalPrice}</p>
                     <p>({cartCount})<i className="fas fa-shopping-bag"></i></p>
                 </div>
-                <div>
+                <div className={styles.statusCont}>
                     {status !== 'idle' && <p>{status}</p>}
                 </div>
                 <div>
@@ -46,6 +46,7 @@ const Cart = () => {
                             id={item.id}
                             prod_id={item.sku}
                             quantity={item.quantity}
+                            toggleCart={props.toggleCart}
                         />
                     )
                 })}

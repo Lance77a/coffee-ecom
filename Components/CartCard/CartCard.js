@@ -8,7 +8,7 @@ const CartCard = (item) => {
     return (
         <li className={styles.cartCard}>
                     <Link href={`/shop/product/${item.prod_id}`}>
-                        <a className={styles.imageCont}>
+                        <a className={styles.imageCont} onClick={item.toggleCart}>
                             <Image className={styles.image} src={item.image} layout="fill" />
                         </a>
                     </Link>
