@@ -1,0 +1,44 @@
+@import "../../styles/variables";
+
+.outer {
+    height: 100%;
+    width: 100%;
+    overflow-x: scroll;
+
+    & > .container {
+        height: 100%;
+        width: auto;
+        display: flex;
+        justify-content: space-between;
+
+        & > .aboutCard {
+            padding: 0 1.5rem 2rem;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 2fr 1fr;
+            place-items: center;
+            text-align: center;
+            color: $dark-orange;
+            flex: 1;
+
+            & > .imageCont {
+                position: relative;
+                border-radius: 50%;
+                overflow: hidden;
+                height: 250px;
+                width: 250px;
+                & .image {
+                    object-fit: cover;
+                }
+            }
+
+            & > .blurb {
+                & > h2 {
+                    color: $light-green;
+                }
+            }
+        }
+    }
+}
+

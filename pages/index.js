@@ -4,17 +4,18 @@ import BannerCont from '../Components/containers/BannerCont'
 import ImageAside from '../Components/ImageAside/ImageAside'
 import ProductCard from '../Components/ProductCard/ProductCard'
 import styles from '../styles/index.module.scss'
+import AboutAside from '../Components/AboutAside/AboutAside'
 
 import Stripe from 'stripe'
 
 export default function Home({prices}) {
   return (
-    <>
+    <div className={styles.landingCont}>
         <LargeCont>
           <Hero />
         </LargeCont>
-        <section>
-          
+        <section className={styles.bannerCont}>
+          <AboutAside />
         </section>
         <BannerCont>
           {prices.map(item => ( <ProductCard key={item.id} {...item} /> ))}
@@ -22,7 +23,7 @@ export default function Home({prices}) {
         <section className={styles.bannerCont}>
           <ImageAside />
         </section>
-    </>
+    </div>
   )
 }
 

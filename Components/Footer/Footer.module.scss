@@ -4,12 +4,42 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: $dark-brown;
+    background-color: $light-brown;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     font-size: 1.1rem;
+    font-weight: 500;
+    color: $dark-green;
+
+    & > .tooltipText {
+        position: relative;
+        cursor: pointer;
+        
+        &::before {
+                position: absolute;
+                display: none;
+                content: attr(tooltip);
+                white-space: nowrap;
+                width: fit-content;
+                top: -2.2rem;
+                left: 50%;
+                transform: translate(-50%, 0);
+                color: $silk;
+                background-color: $light-green;
+                padding: 0.1rem 0.5rem;
+                border-radius: 2rem;
+        }
+
+        &:hover::before {
+            display: block;
+        }
+    }
+
+    
+
+    
 }
 
 @media (min-width: 600px){

@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
       cartMode='client-only'
       stripe={process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY}
       currency={"USD"}
-      successUrl="https://coffee-ecom.vercel.app/"
+      successUrl="https://coffee-ecom.vercel.app/success"
       cancelUrl="https://coffee-ecom.vercel.app/"
       allowedCountries={['US', 'GB', 'CA']}
       billingAddressCollection={true}>

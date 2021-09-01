@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.successCont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 1rem;
+    height: 200px;
+    width: clamp(300px, 300px + 3vw, 450px);
+    background-color: $light-orange;
+    border: 1px solid $dark-brown;
+    border-radius: 1rem;
+    
+    & > h2 {
+        font-size: clamp(1rem, 1rem + 1vw, 2rem);
+        color: $dark-green;
+    }
+    & > p {
+        text-align: center;
+        color: $light-green;
+    }
+}
+
+@media(min-width: 600px){
+    .successCont {
+        position: absolute;
+        left: 2%;
+    }
+}
