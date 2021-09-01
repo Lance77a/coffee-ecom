@@ -13,7 +13,7 @@ const cardArr = [
     {
         image: about2,
         title: "Beautifully Blended",
-        blurb: "Our expert team of master roasters bring the best out of our beans by blending them to a perfection. Culminating in a taste that's sure to delight your palate."
+        blurb: "Our expert team of master roasters bring the best out of our beans by blending them to perfection. Culminating in a taste that's sure to delight your palate."
     },
     {
         image: about3,
