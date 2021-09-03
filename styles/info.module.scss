@@ -26,9 +26,25 @@
     }
 }
 
+.imageCredit {
+    margin-left: 1rem;
+    width: clamp(300px, 300px + 10vw, 600px);
+    text-align: center;
+    margin: 0 auto;
+    color: $light-green;
+
+    & a {
+        color: $dark-green;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
 @media(min-width: 600px){
-    .infoCont {
-        position: absolute;
-        left: 2%;
+    .infoCont, .imageCredit {
+        margin: unset;
+        margin-left: 1rem;
     }
 }

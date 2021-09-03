@@ -10,14 +10,17 @@ const info = {
 
 export default function Info() {
   return (
-    <div className={styles.infoCont}>
-        <div className={styles.headerCont}>
-            <h2>{info.siteName}</h2>
-            <p>{info.stack}</p>
-        </div>
-      
-      <p className={styles.desc}>{info.desc}</p>
-      <p>Created By: {info.author} - <a href={info.devHref}>LanceADev.com</a></p>
-    </div>
+    <>
+      <div className={styles.infoCont}>
+          <div className={styles.headerCont}>
+              <h2>{info.siteName}</h2>
+              <p>{info.stack}</p>
+          </div>
+        
+        <p className={styles.desc}>{info.desc}</p>
+        <p>Created By: {info.author} - <a href={info.devHref}>LanceADev.com</a></p>
+      </div>
+      <p className={styles.imageCredit}>All images courtesy of <a href="https://unsplash.com/">Unsplash</a> & <a href="https://www.vecteezy.com/free-vector/shop">Vecteezy</a></p>
+    </>
   )
 }
