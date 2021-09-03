@@ -5,7 +5,7 @@ const info = {
     stack: 'React / Next.js || SASS || Stripe API',
     desc: 'A production ready Ecommerce site using Stripe for product creation and secure checkout. And Next.js on the front end providing a snappy mobile app feel with static page generation for perfect SEO practices.',
     siteName: 'Bean Bag Coffee',
-    sitePurpose: ''
+    devHref: 'https://www.lanceadev.com/'
 }
 
 export default function Info() {
@@ -17,7 +17,7 @@ export default function Info() {
         </div>
       
       <p className={styles.desc}>{info.desc}</p>
-      <p>Created By: {info.author}</p>
+      <p>Created By: {info.author} - <a href={info.devHref}>LanceADev.com</a></p>
     </div>
   )
 }
